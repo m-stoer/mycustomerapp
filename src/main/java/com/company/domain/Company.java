@@ -9,9 +9,11 @@ import javax.validation.constraints.NotNull;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.serde.annotation.Serdeable.Deserializable;
+import io.micronaut.serde.annotation.Serdeable.Serializable;
 
 @Introspected
 @Deserializable
+@Serializable
 public class Company
 {
 	@NotNull

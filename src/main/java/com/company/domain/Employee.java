@@ -4,9 +4,11 @@ import java.time.LocalDate;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.serde.annotation.Serdeable.Deserializable;
+import io.micronaut.serde.annotation.Serdeable.Serializable;
 
 @Introspected
 @Deserializable
+@Serializable
 public class Employee
 {
 	private String firstname;
