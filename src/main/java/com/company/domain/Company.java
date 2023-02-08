@@ -7,21 +7,18 @@ import java.util.List;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.company.business.JsonLocalDateDeserializer;
-import com.company.business.JsonLocalDateSerializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import io.micronaut.core.annotation.Introspected;
+import io.micronaut.serde.annotation.Serdeable.Deserializable;
 
 @Introspected
+@Deserializable
 public class Company
 {
 	@NotNull
 	@NotBlank
 	private String name;
-	@JsonDeserialize(using = JsonLocalDateDeserializer.class)
-	@JsonSerialize(using = JsonLocalDateSerializer.class)
+	//@JsonDeserialize(using = JsonLocalDateDeserializer.class)
+	//@JsonSerialize(using = JsonLocalDateSerializer.class)
 	private LocalDate foundedDate;
 	private List<Employee> employees = new ArrayList<>();
 
