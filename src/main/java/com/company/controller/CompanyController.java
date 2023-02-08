@@ -1,14 +1,12 @@
 package com.company.controller;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.company.dao.CompanyDao;
 import com.company.domain.Company;
-import com.company.dto.CompanyDto;
 
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
@@ -22,20 +20,15 @@ import io.micronaut.http.annotation.Put;
 public class CompanyController
 {
 	@Get
-	public List<CompanyDto> getCompanies()
+	public List<Company> getCompanies()
 	{
-		return CompanyDao.list().stream().map(CompanyDto::new).collect(Collectors.toList());
+		return CompanyDao.list();
 	}
 
 	@Get("/{companyName}")
-	public CompanyDto getCompany(@PathVariable @NotBlank final String companyName)
+	public Company getCompany(@PathVariable @NotBlank final String companyName)
 	{
-		return CompanyDao.list()
-			.stream()
-			.filter(c -> c.getName().equals(companyName))
-			.map(CompanyDto::new)
-			.findAny()
-			.orElse(null);
+		return CompanyDao.list().stream().filter(c -> c.getName().equals(companyName)).findAny().orElse(null);
 	}
 
 	@Put
