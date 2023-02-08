@@ -3,4 +3,4 @@ defaultPackage: com.company
 testFramework: junit
 sourceLanguage: java
 buildTool: maven
-features: [annotation-api, app-name, http-client, jackson-databind, java, java-application, jax-rs, junit, kubernetes-reactor-client, logback, maven, microstream-cache, netty-server, openapi, properties, reactor, reactor-http-client, readme, serialization-jackson, shade, swagger-ui]
+features: [annotation-api, app-name, http-client, jackson-databind, java, java-application, jax-rs, junit, kubernetes-reactor-client, logback, maven, netty-server, openapi, properties, reactor, reactor-http-client, readme, serialization-jackson, shade, swagger-ui]

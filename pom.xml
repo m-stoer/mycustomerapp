@@ -79,11 +79,6 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.micronaut.microstream</groupId>
-			<artifactId>micronaut-microstream-cache</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>io.micronaut.reactor</groupId>
 			<artifactId>micronaut-reactor</artifactId>
 			<scope>compile</scope>
