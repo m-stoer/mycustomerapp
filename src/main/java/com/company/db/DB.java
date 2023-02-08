@@ -11,10 +11,15 @@ public class DB
 	{
 		return INSTANCE.root.get();
 	}
-	
+
 	public static void store(final Object o)
 	{
 		INSTANCE.storage.store(o);
+	}
+
+	public static ClusterStorageManager<DataRoot> storage()
+	{
+		return INSTANCE.storage;
 	}
 
 	private final Lazy<DataRoot> root;
