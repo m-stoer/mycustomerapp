@@ -2,6 +2,8 @@ package com.company.domain;
 
 import java.time.LocalDate;
 
+import com.company.business.JsonLocalDateSerializer;
+
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.serde.annotation.Serdeable.Deserializable;
 import io.micronaut.serde.annotation.Serdeable.Serializable;
@@ -14,8 +16,8 @@ public class Employee
 	private String firstname;
 	private String lastname;
 	private String email;
-	//@JsonDeserialize(using = JsonLocalDateDeserializer.class)
-	//@JsonSerialize(using = JsonLocalDateSerializer.class)
+	@Serializable(using = JsonLocalDateSerializer.class)
+	@Deserializable(using = JsonLocalDateSerializer.class)
 	private LocalDate birthday;
 
 	public Employee()
@@ -29,7 +31,7 @@ public class Employee
 		this.email = email;
 		this.birthday = birthday;
 	}
-	
+
 	public Employee(final Employee copy)
 	{
 		this.firstname = copy.firstname;
