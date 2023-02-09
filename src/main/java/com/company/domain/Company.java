@@ -4,18 +4,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.company.business.JsonLocalDateSerializer;
 
 import io.micronaut.core.annotation.Introspected;
+import io.micronaut.serde.annotation.SerdeImport;
+import io.micronaut.serde.annotation.Serdeable;
 import io.micronaut.serde.annotation.Serdeable.Deserializable;
 import io.micronaut.serde.annotation.Serdeable.Serializable;
 
 @Introspected
-@Deserializable
-@Serializable
+@Serdeable
+@SerdeImport(value=LocalDate.class)
 public class Company
 {
 	@NotNull
@@ -24,6 +27,7 @@ public class Company
 	@Serializable(using = JsonLocalDateSerializer.class)
 	@Deserializable(using = JsonLocalDateSerializer.class)
 	private LocalDate foundedDate;
+	@Valid
 	private List<Employee> employees = new ArrayList<>();
 
 	public Company()

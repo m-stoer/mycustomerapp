@@ -5,12 +5,14 @@ import java.time.LocalDate;
 import com.company.business.JsonLocalDateSerializer;
 
 import io.micronaut.core.annotation.Introspected;
+import io.micronaut.serde.annotation.SerdeImport;
+import io.micronaut.serde.annotation.Serdeable;
 import io.micronaut.serde.annotation.Serdeable.Deserializable;
 import io.micronaut.serde.annotation.Serdeable.Serializable;
 
 @Introspected
-@Deserializable
-@Serializable
+@Serdeable
+@SerdeImport(value=LocalDate.class)
 public class Employee
 {
 	private String firstname;

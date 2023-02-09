@@ -2,6 +2,7 @@ package com.company.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -32,13 +33,13 @@ public class CompanyController
 	}
 
 	@Put
-	public void putCompany(@Body @NotNull final Company company)
+	public void putCompany(@Body @NotNull @Valid final Company company)
 	{
 		CompanyDao.insert(company);
 	}
 
 	@Patch
-	public boolean patchCompany(@Body @NotNull final Company company)
+	public boolean patchCompany(@Body @NotNull @Valid final Company company)
 	{
 		return CompanyDao.update(company);
 	}

@@ -5,11 +5,10 @@ import java.time.LocalDate;
 
 import io.micronaut.core.type.Argument;
 import io.micronaut.serde.Decoder;
-import io.micronaut.serde.Deserializer;
 import io.micronaut.serde.Encoder;
-import io.micronaut.serde.Serializer;
+import io.micronaut.serde.Serde;
 
-public class JsonLocalDateSerializer implements Serializer<LocalDate>, Deserializer<LocalDate>
+public class JsonLocalDateSerializer implements Serde<LocalDate>
 {
 	@Override
 	public void serialize(
